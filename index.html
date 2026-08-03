@@ -190,6 +190,7 @@
 
   /* ---------- content ---------- */
   .content{min-width:0;flex:1;padding:40px 56px 100px;max-width:900px;}
+  .reading.no-toc .content{max-width:1100px;}
   @media (max-width:900px){.content{padding:28px 22px 80px;max-width:none;}}
   .page{display:none;}
   .page.active{display:block;animation:fade .25s ease;}
@@ -718,8 +719,14 @@
   function buildMiniToc(id){
     var page = document.getElementById('page-'+id);
     var heads = page.querySelectorAll('h2.h-sec');
-    if(!heads.length){ minitoc.style.visibility='hidden'; return; }
-    minitoc.style.visibility='visible';
+    var reading = document.querySelector('.reading');
+    if(!heads.length){
+      minitoc.style.display='none';
+      if(reading) reading.classList.add('no-toc');
+      return;
+    }
+    minitoc.style.display='';
+    if(reading) reading.classList.remove('no-toc');
     minitocList.innerHTML = '';
     heads.forEach(function(h){
       var a = document.createElement('a');
