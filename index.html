@@ -81,9 +81,11 @@
   }
 
   /* ---------- app shell ---------- */
-  .app{display:grid;grid-template-columns:264px minmax(0,1fr) 208px;min-height:100vh;}
-  @media (max-width:1100px){ .app{grid-template-columns:264px minmax(0,1fr);} .minitoc{display:none;} }
-  @media (max-width:760px){ .app{grid-template-columns:1fr;} }
+  .app{display:flex;min-height:100vh;}
+  .main-wrap{flex:1;min-width:0;display:flex;justify-content:center;}
+  .reading{display:flex;align-items:flex-start;width:100%;max-width:1180px;}
+  @media (max-width:1100px){ .reading{max-width:960px;} .minitoc{display:none;} }
+  @media (max-width:760px){ .app{flex-direction:column;} .reading{display:block;max-width:none;} }
 
   /* ---------- sidebar ---------- */
   .sidebar{
@@ -142,8 +144,8 @@
   }
 
   /* ---------- content ---------- */
-  .content{min-width:0;padding:40px 48px 100px;max-width:760px;}
-  @media (max-width:900px){.content{padding:28px 22px 80px;}}
+  .content{min-width:0;flex:1;padding:40px 56px 100px;max-width:900px;}
+  @media (max-width:900px){.content{padding:28px 22px 80px;max-width:none;}}
   .page{display:none;}
   .page.active{display:block;animation:fade .25s ease;}
   @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
@@ -267,7 +269,7 @@
   .pagefoot a:hover b{color:var(--accent);}
 
   /* mini toc */
-  .minitoc{padding:40px 20px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+  .minitoc{width:220px;flex:none;padding:40px 24px 40px 0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
   .minitoc .label{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;}
   .minitoc a{
     display:block;font-size:12.8px;color:var(--text-muted);text-decoration:none;padding:5px 0 5px 12px;
@@ -326,6 +328,7 @@
     <strong style="font-size:13.5px;">평가시스템 매뉴얼</strong>
   </div>
 
+  <div class="main-wrap"><div class="reading">
   <main class="content" id="content">
 
     <section class="page active" id="page-overview">
@@ -621,6 +624,7 @@
     <div class="label">On this page</div>
     <div id="minitocList"></div>
   </aside>
+  </div></div>
 </div>
 
 <script>
