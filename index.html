@@ -113,6 +113,19 @@
   }
   .searchbox input:focus{border-color:var(--accent);}
   .searchbox svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--text-faint);}
+  .search-results{
+    position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--bg-elevated);
+    border:1px solid var(--border);border-radius:var(--radius-m);box-shadow:var(--shadow);
+    max-height:400px;overflow-y:auto;z-index:50;display:none;
+  }
+  .search-results.show{display:block;}
+  .search-result{padding:10px 12px;cursor:pointer;border-bottom:1px solid var(--border);}
+  .search-result:last-child{border-bottom:none;}
+  .search-result:hover{background:var(--accent-soft);}
+  .sr-path{font-size:11px;color:var(--text-faint);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sr-snippet{font-size:13px;color:var(--text-muted);line-height:1.5;}
+  .sr-snippet .hl{color:var(--accent);font-weight:700;}
+  .search-empty{padding:16px 12px;font-size:12.5px;color:var(--text-faint);text-align:center;}
 
   .fontctl{border:1px solid var(--border);border-radius:var(--radius-s);padding:10px 12px;background:var(--bg-elevated);}
   .fontctl-label{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--text-faint);text-transform:uppercase;margin-bottom:8px;}
@@ -365,7 +378,8 @@
     </div>
     <div class="searchbox">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
-      <input id="search" placeholder="목차 검색..." autocomplete="off">
+      <input id="search" placeholder="내용 검색..." autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
     </div>
     <div class="fontctl">
       <div class="fontctl-label">글씨 크기</div>
@@ -825,12 +839,79 @@
     el.addEventListener('click', function(){ setActive(el.getAttribute('data-page'), true); });
   });
 
-  document.getElementById('search').addEventListener('input', function(e){
-    var q = e.target.value.trim().toLowerCase();
-    document.querySelectorAll('.nav-item').forEach(function(el){
-      var match = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
-      el.style.display = match ? '' : 'none';
+  var searchIndex = [];
+  (function buildSearchIndex(){
+    var counter = 0;
+    document.querySelectorAll('.page').forEach(function(pageEl){
+      var pageId = pageEl.id.replace('page-','');
+      var pageTitle = titles[pageId] || pageId;
+      var currentSection = '';
+      var nodes = pageEl.querySelectorAll('h2.h-sec, h3.h-sub, h4, p, li, .rule-box, .tip > span:not(.tag), .legend .row');
+      nodes.forEach(function(el){
+        if(el.closest('.mock')) return;
+        if(el.classList.contains('h-sec')) currentSection = el.textContent.trim();
+        var text = el.textContent.replace(/\s+/g,' ').trim();
+        if(text.length < 2) return;
+        if(!el.id) el.id = 'sr-' + (counter++);
+        searchIndex.push({pageId:pageId, pageTitle:pageTitle, section:currentSection, text:text, targetId:el.id});
+      });
     });
+  })();
+
+  function escapeHtml(s){
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function makeSnippet(text, q){
+    var idx = text.toLowerCase().indexOf(q.toLowerCase());
+    if(idx === -1) return escapeHtml(text.slice(0,90));
+    var start = Math.max(0, idx-28);
+    var end = Math.min(text.length, idx+q.length+55);
+    return (start>0?'…':'') + escapeHtml(text.slice(start, idx))
+      + '<span class="hl">' + escapeHtml(text.slice(idx, idx+q.length)) + '</span>'
+      + escapeHtml(text.slice(idx+q.length, end)) + (end<text.length?'…':'');
+  }
+
+  var searchInput = document.getElementById('search');
+  var searchResultsEl = document.getElementById('searchResults');
+
+  function renderSearchResults(q){
+    if(!q){ searchResultsEl.classList.remove('show'); searchResultsEl.innerHTML=''; return; }
+    var qLower = q.toLowerCase();
+    var matches = searchIndex.filter(function(item){ return item.text.toLowerCase().indexOf(qLower) !== -1; }).slice(0,40);
+    if(!matches.length){
+      searchResultsEl.innerHTML = '<div class="search-empty">검색 결과가 없어요.</div>';
+      searchResultsEl.classList.add('show');
+      return;
+    }
+    searchResultsEl.innerHTML = matches.map(function(m){
+      var path = m.section ? (m.pageTitle + ' › ' + m.section) : m.pageTitle;
+      return '<div class="search-result" data-page="'+m.pageId+'" data-target="'+m.targetId+'">'
+        + '<div class="sr-path">'+escapeHtml(path)+'</div>'
+        + '<div class="sr-snippet">'+makeSnippet(m.text, q)+'</div>'
+        + '</div>';
+    }).join('');
+    searchResultsEl.classList.add('show');
+  }
+
+  searchInput.addEventListener('input', function(e){ renderSearchResults(e.target.value.trim()); });
+  searchInput.addEventListener('focus', function(e){ if(e.target.value.trim()) renderSearchResults(e.target.value.trim()); });
+
+  searchResultsEl.addEventListener('click', function(e){
+    var item = e.target.closest('.search-result');
+    if(!item) return;
+    var pageId = item.getAttribute('data-page');
+    var targetId = item.getAttribute('data-target');
+    setActive(pageId, true);
+    searchResultsEl.classList.remove('show');
+    searchInput.value = '';
+    setTimeout(function(){
+      var target = document.getElementById(targetId);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'center'});
+    }, 60);
+  });
+
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.searchbox')) searchResultsEl.classList.remove('show');
   });
 
   var sidebar = document.getElementById('sidebar');
