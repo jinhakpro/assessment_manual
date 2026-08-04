@@ -118,12 +118,10 @@
   .fontctl-label{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--text-faint);text-transform:uppercase;margin-bottom:8px;}
   .fontctl-row{display:flex;align-items:center;justify-content:space-between;gap:6px;}
   .fontctl-row button{
-    width:30px;height:30px;border-radius:7px;border:1px solid var(--border-strong);background:var(--bg-mock);
-    color:var(--text);font-weight:800;cursor:pointer;flex:none;
+    padding:7px 14px;border-radius:7px;border:1px solid var(--border-strong);background:var(--bg-mock);
+    color:var(--text);font-weight:700;font-size:13px;cursor:pointer;flex:none;white-space:nowrap;
   }
   .fontctl-row button:hover{border-color:var(--accent);color:var(--accent);}
-  .fontctl-row button.dec{font-size:13px;}
-  .fontctl-row button.inc{font-size:18px;}
   #fontPct{font-family:var(--font-mono);font-size:14px;color:var(--text-muted);}
   .fontctl-hint{margin:8px 0 0;font-size:13px;color:var(--text-faint);line-height:1.5;}
   .sidebar.collapsed .fontctl{display:none;}
@@ -372,9 +370,9 @@
     <div class="fontctl">
       <div class="fontctl-label">글씨 크기</div>
       <div class="fontctl-row">
-        <button class="dec" id="fontDec" aria-label="글씨 작게">가⁻</button>
+        <button class="dec" id="fontDec" aria-label="글씨 작게">작게</button>
         <span id="fontPct">100%</span>
-        <button class="inc" id="fontInc" aria-label="글씨 크게">가⁺</button>
+        <button class="inc" id="fontInc" aria-label="글씨 크게">크게</button>
       </div>
       <p class="fontctl-hint">글씨 크기를 조정해보세요!</p>
     </div>
