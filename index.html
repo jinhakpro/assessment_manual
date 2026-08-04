@@ -56,7 +56,7 @@
     background:var(--bg);
     color:var(--text);
     font-family:var(--font-ui);
-    font-size:15.5px;
+    font-size:17.5px;
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
@@ -100,48 +100,48 @@
     .sidebar.open{transform:translateX(0);}
   }
   .brandrow{display:flex;align-items:center;gap:9px;padding:6px 8px;}
-  .brandrow .name{font-weight:800;font-size:14.5px;letter-spacing:.2px;}
+  .brandrow .name{font-weight:800;font-size:16.5px;letter-spacing:.2px;}
   .brandrow .name b{color:var(--accent);}
   .brandrow .ver{
-    font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint);
+    font-family:var(--font-mono);font-size:12.5px;color:var(--text-faint);
     border:1px solid var(--border);border-radius:20px;padding:1px 7px;margin-left:auto;
   }
   .searchbox{position:relative;}
   .searchbox input{
     width:100%;padding:8px 10px 8px 30px;border-radius:var(--radius-s);
-    border:1px solid var(--border);background:var(--bg-elevated);color:var(--text);font-size:13px;
+    border:1px solid var(--border);background:var(--bg-elevated);color:var(--text);font-size:15px;
   }
   .searchbox input:focus{border-color:var(--accent);}
   .searchbox svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--text-faint);}
 
   .fontctl{border:1px solid var(--border);border-radius:var(--radius-s);padding:10px 12px;background:var(--bg-elevated);}
-  .fontctl-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--text-faint);text-transform:uppercase;margin-bottom:8px;}
+  .fontctl-label{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--text-faint);text-transform:uppercase;margin-bottom:8px;}
   .fontctl-row{display:flex;align-items:center;justify-content:space-between;gap:6px;}
   .fontctl-row button{
     width:30px;height:30px;border-radius:7px;border:1px solid var(--border-strong);background:var(--bg-mock);
     color:var(--text);font-weight:800;cursor:pointer;flex:none;
   }
   .fontctl-row button:hover{border-color:var(--accent);color:var(--accent);}
-  .fontctl-row button.dec{font-size:11px;}
-  .fontctl-row button.inc{font-size:16px;}
-  #fontPct{font-family:var(--font-mono);font-size:12px;color:var(--text-muted);}
-  .fontctl-hint{margin:8px 0 0;font-size:11px;color:var(--text-faint);line-height:1.5;}
+  .fontctl-row button.dec{font-size:13px;}
+  .fontctl-row button.inc{font-size:18px;}
+  #fontPct{font-family:var(--font-mono);font-size:14px;color:var(--text-muted);}
+  .fontctl-hint{margin:8px 0 0;font-size:13px;color:var(--text-faint);line-height:1.5;}
   .sidebar.collapsed .fontctl{display:none;}
 
   nav.nav{display:flex;flex-direction:column;gap:2px;flex:1;}
-  .nav-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;padding:12px 10px 4px;}
+  .nav-label{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;padding:12px 10px 4px;}
   .nav-item{
     display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:var(--radius-s);
-    font-size:13.5px;color:var(--text-muted);cursor:pointer;text-decoration:none;border:1px solid transparent;
+    font-size:15.5px;color:var(--text-muted);cursor:pointer;text-decoration:none;border:1px solid transparent;
   }
   .nav-item:hover{background:var(--accent-soft);color:var(--text);}
   .nav-item.active{background:var(--accent-soft);color:var(--accent);font-weight:700;border-color:var(--accent-soft);}
   .nav-item .num{
-    font-family:var(--font-mono);font-size:11px;color:var(--text-faint);width:18px;flex:none;
+    font-family:var(--font-mono);font-size:13px;color:var(--text-faint);width:18px;flex:none;
   }
   .nav-item.active .num{color:var(--accent);}
   .sidebar-foot{
-    border-top:1px solid var(--border);padding-top:12px;font-size:11.5px;color:var(--text-faint);
+    border-top:1px solid var(--border);padding-top:12px;font-size:13.5px;color:var(--text-faint);
     display:flex;justify-content:space-between;
   }
 
@@ -170,10 +170,10 @@
   .annotated{display:flex;gap:24px;align-items:flex-start;margin:18px 0 26px;}
   .ann-image{position:relative;flex:1;min-width:0;}
   .ann-image .mock{margin:0;}
-  .shot-note{margin-top:8px;font-size:11.5px;color:var(--text-faint);font-style:italic;}
+  .shot-note{margin-top:8px;font-size:13.5px;color:var(--text-faint);font-style:italic;}
   .pin{
     position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;
-    background:var(--accent-2);color:#fff;font-family:var(--font-mono);font-weight:800;font-size:12px;
+    background:var(--accent-2);color:#fff;font-family:var(--font-mono);font-weight:800;font-size:14px;
     display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px var(--bg-elevated),0 2px 6px rgba(0,0,0,.25);
     cursor:default;z-index:2;transition:transform .15s ease,box-shadow .15s ease;
   }
@@ -182,8 +182,8 @@
   .ann-item{display:flex;gap:10px;padding:8px;border-radius:8px;cursor:default;transition:background .15s ease;}
   .ann-item.active{background:var(--accent-soft);}
   .ann-item .pin{position:static;transform:none;flex:none;}
-  .ann-item b{display:block;font-size:13.5px;margin-bottom:2px;}
-  .ann-item p{margin:0;font-size:12.5px;color:var(--text-muted);}
+  .ann-item b{display:block;font-size:15.5px;margin-bottom:2px;}
+  .ann-item p{margin:0;font-size:14.5px;color:var(--text-muted);}
   @media (max-width:700px){
     .annotated{flex-direction:column;}
     .ann-legend{width:100%;flex-direction:row;flex-wrap:wrap;}
@@ -210,19 +210,19 @@
   .page.active{display:block;animation:fade .25s ease;}
   @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
 
-  .crumb{font-size:12.5px;color:var(--text-faint);margin-bottom:10px;display:flex;gap:6px;align-items:center;}
+  .crumb{font-size:14.5px;color:var(--text-faint);margin-bottom:10px;display:flex;gap:6px;align-items:center;}
   .crumb b{color:var(--text-muted);font-weight:600;}
 
   .page-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;}
-  .page-head h1{font-size:1.7rem;line-height:1.3;}
-  .page-sub{color:var(--text-muted);font-size:14.5px;margin:8px 0 30px;}
+  .page-head h1{font-size:1.825rem;line-height:1.3;}
+  .page-sub{color:var(--text-muted);font-size:16.5px;margin:8px 0 30px;}
 
-  h2.h-sec{font-size:1.2rem;margin:40px 0 12px;display:flex;align-items:center;gap:9px;}
+  h2.h-sec{font-size:1.325rem;margin:40px 0 12px;display:flex;align-items:center;gap:9px;}
   h2.h-sec:first-of-type{margin-top:8px;}
   p{margin:0 0 14px;color:var(--text);}
   p.muted{color:var(--text-muted);}
 
-  .lead{font-size:15.5px;color:var(--text);background:var(--bg-elevated);border:1px solid var(--border);
+  .lead{font-size:17.5px;color:var(--text);background:var(--bg-elevated);border:1px solid var(--border);
     border-radius:var(--radius-m);padding:16px 18px;margin-bottom:22px;}
 
   ol.steps{list-style:none;margin:0 0 22px;padding:0;counter-reset:step;}
@@ -232,26 +232,26 @@
   ol.steps>li:last-child{border-color:transparent;padding-bottom:0;}
   ol.steps>li::before{
     content:counter(step);position:absolute;left:-11px;top:0;width:22px;height:22px;border-radius:50%;
-    background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+    background:var(--accent);color:#fff;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
     font-family:var(--font-mono);
   }
   ol.steps>li b{display:block;font-weight:700;margin-bottom:3px;}
-  ol.steps>li span{color:var(--text-muted);font-size:14px;}
+  ol.steps>li span{color:var(--text-muted);font-size:16px;}
 
   .tip{
     display:flex;gap:10px;background:var(--accent-soft);border:1px solid transparent;border-radius:var(--radius-m);
-    padding:12px 14px;margin:16px 0;font-size:13.8px;
+    padding:12px 14px;margin:16px 0;font-size:15.8px;
   }
-  .tip .tag{font-family:var(--font-mono);font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--accent);flex:none;padding-top:1px;}
+  .tip .tag{font-family:var(--font-mono);font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--accent);flex:none;padding-top:1px;}
   .warn{
     background:var(--accent-2-soft);border-radius:var(--radius-m);padding:14px 16px;margin:18px 0;
   }
-  .warn .tag{font-family:var(--font-mono);font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--accent-2);}
+  .warn .tag{font-family:var(--font-mono);font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--accent-2);}
   .warn ul{margin:8px 0 0;padding-left:18px;}
-  .warn li{margin-bottom:5px;font-size:13.8px;}
+  .warn li{margin-bottom:5px;font-size:15.8px;}
 
-  .rule-box{background:var(--bg-elevated);border:1px solid var(--border-strong);border-radius:var(--radius-m);padding:14px 16px;margin:14px 0 18px;font-size:13.8px;color:var(--text-muted);}
-  .rule-box code{font-family:var(--font-mono);background:var(--bg-mock);padding:1px 5px;border-radius:4px;font-size:12.5px;color:var(--text);}
+  .rule-box{background:var(--bg-elevated);border:1px solid var(--border-strong);border-radius:var(--radius-m);padding:14px 16px;margin:14px 0 18px;font-size:15.8px;color:var(--text-muted);}
+  .rule-box code{font-family:var(--font-mono);background:var(--bg-mock);padding:1px 5px;border-radius:4px;font-size:14.5px;color:var(--text);}
 
   /* mockup window chrome */
   .mock{
@@ -262,25 +262,25 @@
     background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-m);
     box-shadow:var(--shadow);overflow:hidden;min-width:420px;
   }
-  .mock-bar{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid var(--border);font-size:12px;color:var(--text-faint);}
+  .mock-bar{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-faint);}
   .mock-bar .dots{display:flex;gap:5px;}
   .mock-bar .dots span{width:8px;height:8px;border-radius:50%;background:var(--border-strong);}
   .mock-body{padding:22px 24px;}
   .mock-field{margin-bottom:14px;}
-  .mock-field label{display:block;font-size:12px;color:var(--text-muted);margin-bottom:5px;font-weight:600;}
-  .mock-field .box{border:1px solid var(--border-strong);border-radius:7px;padding:9px 11px;font-size:13px;color:var(--text-faint);background:var(--bg);}
+  .mock-field label{display:block;font-size:14px;color:var(--text-muted);margin-bottom:5px;font-weight:600;}
+  .mock-field .box{border:1px solid var(--border-strong);border-radius:7px;padding:9px 11px;font-size:15px;color:var(--text-faint);background:var(--bg);}
   .mock-btn{
     display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border:none;
-    border-radius:7px;padding:9px 16px;font-size:13.5px;font-weight:700;cursor:default;
+    border-radius:7px;padding:9px 16px;font-size:15.5px;font-weight:700;cursor:default;
   }
   .mock-btn.ghost{background:var(--bg-mock);color:var(--text-muted);border:1px solid var(--border-strong);}
-  .mock-row{display:flex;justify-content:space-between;font-size:12.8px;padding:6px 0;border-bottom:1px dashed var(--border);color:var(--text-muted);}
-  .mock-row b{color:var(--text);font-weight:700;font-family:var(--font-mono);font-size:12.3px;}
+  .mock-row{display:flex;justify-content:space-between;font-size:14.8px;padding:6px 0;border-bottom:1px dashed var(--border);color:var(--text-muted);}
+  .mock-row b{color:var(--text);font-weight:700;font-family:var(--font-mono);font-size:14.3px;}
   .mock-row:last-child{border-bottom:none;}
 
   .panel3{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:12px;min-width:640px;}
-  .panel3 .col{border-radius:9px;padding:12px;font-size:12px;border:1.5px dashed;}
-  .panel3 .col h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+  .panel3 .col{border-radius:9px;padding:12px;font-size:14px;border:1.5px dashed;}
+  .panel3 .col h4{font-size:13.5px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
   .panel3 .p1{border-color:var(--accent-2);background:var(--accent-2-soft);}
   .panel3 .p1 h4{color:var(--accent-2);}
   .panel3 .p2{border-color:var(--accent);background:var(--accent-soft);}
@@ -292,52 +292,52 @@
 
   .filelist{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 14px;margin:14px 0 20px;}
   .filelist div{
-    font-size:13px;color:var(--text-muted);padding:8px 11px;border:1px solid var(--border);border-radius:7px;
+    font-size:15px;color:var(--text-muted);padding:8px 11px;border:1px solid var(--border);border-radius:7px;
     display:flex;align-items:center;gap:8px;background:var(--bg-elevated);
   }
 
   .legend{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
-  .legend .row{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--text-muted);}
+  .legend .row{display:flex;align-items:center;gap:10px;font-size:15.5px;color:var(--text-muted);}
   .memo-ic{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--border-strong);display:flex;align-items:center;justify-content:center;position:relative;flex:none;background:var(--bg-elevated);}
   .memo-ic svg{width:12px;height:12px;color:var(--text-faint);}
   .memo-ic.has::after{content:"";position:absolute;top:-3px;right:-3px;width:7px;height:7px;border-radius:50%;background:var(--accent-2);}
   .memo-ic.mine{border-color:var(--accent);}
   .memo-ic.mine svg{color:var(--accent);}
 
-  table.printsheet{width:100%;border-collapse:collapse;font-size:13px;min-width:420px;}
+  table.printsheet{width:100%;border-collapse:collapse;font-size:15px;min-width:420px;}
   table.printsheet td{padding:9px 12px;border-bottom:1px solid var(--border);}
   table.printsheet td:first-child{color:var(--text-muted);width:38%;}
   table.printsheet td:last-child{font-weight:700;font-family:var(--font-mono);}
   table.printsheet tr:last-child td{border-bottom:none;background:var(--accent-soft);border-radius:8px;}
 
-  .notice-mock{border-radius:9px;border:1px solid var(--border);background:var(--bg-elevated);padding:16px 18px;font-size:13.3px;color:var(--text-muted);min-width:380px;}
+  .notice-mock{border-radius:9px;border:1px solid var(--border);background:var(--bg-elevated);padding:16px 18px;font-size:15.3px;color:var(--text-muted);min-width:380px;}
   .notice-mock p{margin:0 0 10px;}
-  .notice-mock .date{font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint);}
+  .notice-mock .date{font-family:var(--font-mono);font-size:13.5px;color:var(--text-faint);}
 
-  figcaption{font-size:12px;color:var(--text-faint);margin-top:8px;text-align:center;}
+  figcaption{font-size:14px;color:var(--text-faint);margin-top:8px;text-align:center;}
 
   .pagefoot{
     display:flex;justify-content:space-between;gap:14px;margin-top:52px;padding-top:22px;border-top:1px solid var(--border);
   }
   .pagefoot a{
     display:flex;flex-direction:column;gap:3px;text-decoration:none;padding:12px 16px;border:1px solid var(--border);
-    border-radius:var(--radius-m);font-size:13px;color:var(--text-muted);max-width:48%;cursor:pointer;
+    border-radius:var(--radius-m);font-size:15px;color:var(--text-muted);max-width:48%;cursor:pointer;
   }
   .pagefoot a:hover{border-color:var(--accent);color:var(--accent);}
   .pagefoot a.next{margin-left:auto;text-align:right;}
-  .pagefoot a b{font-size:14px;color:var(--text);}
+  .pagefoot a b{font-size:16px;color:var(--text);}
   .pagefoot a:hover b{color:var(--accent);}
 
   /* mini toc */
   .minitoc{width:220px;flex:none;padding:40px 24px 40px 0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
-  .minitoc .label{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;}
+  .minitoc .label{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;}
   .minitoc a{
-    display:block;font-size:12.8px;color:var(--text-muted);text-decoration:none;padding:5px 0 5px 12px;
+    display:block;font-size:14.8px;color:var(--text-muted);text-decoration:none;padding:5px 0 5px 12px;
     border-left:2px solid var(--border);margin-bottom:2px;
   }
   .minitoc a:hover{color:var(--accent);}
 
-  .kicker{font-family:var(--font-mono);font-size:11.5px;color:var(--accent);font-weight:700;letter-spacing:.04em;margin-bottom:8px;display:block;}
+  .kicker{font-family:var(--font-mono);font-size:13.5px;color:var(--accent);font-weight:700;letter-spacing:.04em;margin-bottom:8px;display:block;}
 
   .cardgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;}
   @media (max-width:600px){.cardgrid{grid-template-columns:1fr;}}
@@ -346,10 +346,10 @@
   }
   .card:hover{border-color:var(--accent);box-shadow:var(--shadow);}
   .card .crow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
-  .card .crow .num{font-family:var(--font-mono);color:var(--accent);font-size:12px;font-weight:700;}
-  .card .crow .pg{font-family:var(--font-mono);color:var(--text-faint);font-size:11px;}
-  .card h4{font-size:14.5px;margin-bottom:4px;}
-  .card p{font-size:12.8px;color:var(--text-muted);margin:0;}
+  .card .crow .num{font-family:var(--font-mono);color:var(--accent);font-size:14px;font-weight:700;}
+  .card .crow .pg{font-family:var(--font-mono);color:var(--text-faint);font-size:13px;}
+  .card h4{font-size:16.5px;margin-bottom:4px;}
+  .card p{font-size:14.8px;color:var(--text-muted);margin:0;}
 </style>
 </head>
 <body>
@@ -397,7 +397,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
     </button>
     <div class="brandmark" style="width:20px;height:20px;"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3L18 12L6 21V3Z" fill="white"/></svg></div>
-    <strong style="font-size:13.5px;">평가시스템 매뉴얼</strong>
+    <strong style="font-size:15.5px;">평가시스템 매뉴얼</strong>
   </div>
 
   <div class="main-wrap"><div class="reading">
@@ -432,10 +432,10 @@
           <div class="mock-body" style="padding:36px 32px;">
             <div style="text-align:center;display:flex;align-items:center;justify-content:center;gap:7px;">
               <div class="brandmark" style="width:22px;height:22px;border-radius:6px;"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3L18 12L6 21V3Z" fill="white"/></svg></div>
-              <span style="font-weight:800;font-size:14px;letter-spacing:.2px;">JINHAK<span style="color:var(--accent);">PRO</span></span>
+              <span style="font-weight:800;font-size:16px;letter-spacing:.2px;">JINHAK<span style="color:var(--accent);">PRO</span></span>
             </div>
-            <p style="text-align:center;font-weight:800;font-size:20px;margin:20px 0 10px;">평가위원으로 초대되셨습니다.</p>
-            <p class="muted" style="text-align:center;font-size:12.5px;line-height:1.7;margin-bottom:22px;">
+            <p style="text-align:center;font-weight:800;font-size:22px;margin:20px 0 10px;">평가위원으로 초대되셨습니다.</p>
+            <p class="muted" style="text-align:center;font-size:14.5px;line-height:1.7;margin-bottom:22px;">
               안녕하세요 #{평가자명}님 석·박사 채용 접수 플랫폼, 진학프로입니다.<br>
               '평가시스템 접속하기' 버튼을 통해 비밀번호를 직접 설정한 이후 채용 평가를 진행해주세요
             </p>
@@ -448,9 +448,9 @@
                 <div class="mock-row" style="border:none;"><span style="flex:none;">평가위원명</span><b style="flex:1;min-width:0;text-align:right;">조가현</b></div>
                 <div class="mock-row" style="border:none;"><span style="flex:none;">이메일(아이디)</span><b style="flex:1;min-width:0;text-align:right;">cgh@gmail.com</b></div>
                 <div class="mock-row" style="border:none;"><span style="flex:none;">인증번호</span><b style="flex:1;min-width:0;text-align:right;">853531</b></div>
-                <p class="muted" style="font-size:11px;margin:8px 0 0;">· 인증번호는 2026.07.07 15:35:36까지 유효합니다.</p>
+                <p class="muted" style="font-size:13px;margin:8px 0 0;">· 인증번호는 2026.07.07 15:35:36까지 유효합니다.</p>
               </div>
-              <div style="padding:13px 18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-muted);line-height:1.6;">
+              <div style="padding:13px 18px;border-top:1px solid var(--border);font-size:13.5px;color:var(--text-muted);line-height:1.6;">
                 <b style="color:var(--text);">ⓘ 평가시스템 로그인 방법 :</b><br>
                 아이디에는 아래에 안내된 이메일 주소를 입력하고, 비밀번호에는 처음 설정한 비밀번호를 입력해주세요.
               </div>
@@ -459,7 +459,7 @@
               <button class="mock-btn" style="flex:1;">평가시스템 접속하기</button>
               <button class="mock-btn" style="flex:1;">평가위원 매뉴얼 다운받기</button>
             </div>
-            <p style="text-align:center;font-size:11.5px;color:var(--text-muted);margin-top:14px;">
+            <p style="text-align:center;font-size:13.5px;color:var(--text-muted);margin-top:14px;">
               도움이 필요하신가요? <span style="color:var(--accent);text-decoration:underline;">고객센터 문의하기 (원격요청)</span>
             </p>
           </div>
@@ -495,7 +495,7 @@
         <div class="mock-inner" style="max-width:440px;">
           <div class="mock-bar"><span class="dots"><span></span><span></span><span></span></span>&nbsp;비밀번호 설정</div>
           <div class="mock-body">
-            <p class="muted" style="font-size:12.5px;">jinhakpro@jinhakapply.com 님의 비밀번호를 설정해 주세요.</p>
+            <p class="muted" style="font-size:14.5px;">jinhakpro@jinhakapply.com 님의 비밀번호를 설정해 주세요.</p>
             <div class="mock-field"><label>새 비밀번호</label><div class="box">비밀번호를 입력해 주세요.</div></div>
             <div class="mock-field"><label>새 비밀번호 확인</label><div class="box">비밀번호를 다시 입력해 주세요.</div></div>
             <div class="mock-field"><label>인증번호</label><div class="box">메일의 6자리 인증번호를 입력해 주세요.</div></div>
@@ -525,12 +525,12 @@
         <div class="mock-inner" style="max-width:440px;">
           <div class="mock-bar"><span class="dots"><span></span><span></span><span></span></span>&nbsp;진학프로 평가시스템</div>
           <div class="mock-body">
-            <p style="text-align:center;font-weight:800;font-size:16px;margin-bottom:18px;">▶ 진학대학교</p>
+            <p style="text-align:center;font-weight:800;font-size:18px;margin-bottom:18px;">▶ 진학대학교</p>
             <div class="mock-field"><label>아이디</label><div class="box">이메일을 입력해 주세요.</div></div>
             <div class="mock-field"><label>비밀번호</label><div class="box">비밀번호를 입력해 주세요.</div></div>
-            <p class="muted" style="font-size:12px;margin-bottom:14px;">☑ 아이디 저장</p>
+            <p class="muted" style="font-size:14px;margin-bottom:14px;">☑ 아이디 저장</p>
             <button class="mock-btn" style="width:100%;margin-bottom:10px;">로그인</button>
-            <p style="text-align:center;font-size:12px;color:var(--accent);">비밀번호 재설정</p>
+            <p style="text-align:center;font-size:14px;color:var(--accent);">비밀번호 재설정</p>
           </div>
         </div>
       </figure>
@@ -619,13 +619,13 @@
             <div class="mock-inner" style="max-width:340px;">
               <div class="mock-bar"><span class="dots"><span></span><span></span><span></span></span>&nbsp;평가표</div>
               <div class="mock-body">
-                <p style="font-weight:700;font-size:13.5px;margin-bottom:12px;">김진학 지원자를 평가해주세요.</p>
-                <p class="muted" style="font-size:11.5px;margin-bottom:4px;">전공 부합성</p>
+                <p style="font-weight:700;font-size:15.5px;margin-bottom:12px;">김진학 지원자를 평가해주세요.</p>
+                <p class="muted" style="font-size:13.5px;margin-bottom:4px;">전공 부합성</p>
                 <div style="display:flex;gap:6px;margin-bottom:14px;">
                   <button class="mock-btn" style="flex:1;">PASS</button>
                   <button class="mock-btn ghost" style="flex:1;">FAIL</button>
                 </div>
-                <p class="muted" style="font-size:11.5px;margin-bottom:4px;">연구 실적 (80점)</p>
+                <p class="muted" style="font-size:13.5px;margin-bottom:4px;">연구 실적 (80점)</p>
                 <div class="box" style="margin-bottom:14px;">62 점</div>
                 <button class="mock-btn" style="width:100%;">평가 저장하기</button>
               </div>
