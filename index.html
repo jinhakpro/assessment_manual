@@ -405,28 +405,50 @@
       만약 메일을 찾지 못하셨다면, <b>스팸메일함</b>을 확인해주시거나 대학에 <b>이메일 재발송</b>을 요청해주세요.</p>
 
       <figure class="mock">
-        <div class="mock-inner" style="max-width:520px;">
-          <div class="mock-bar"><span class="dots"><span></span><span></span><span></span></span>&nbsp;[진학프로] 공과대학 서류 평가 요청 안내</div>
-          <div class="mock-body">
-            <p style="text-align:center;font-weight:700;font-size:15px;margin-bottom:2px;">"공과대학 서류 평가" 평가위원으로 초대되셨습니다.</p>
-            <p class="muted" style="text-align:center;font-size:12.5px;margin-bottom:16px;">'평가하기' 버튼을 통해 비밀번호를 직접 설정한 이후 채용 평가를 진행해주세요.</p>
-            <div class="mock-row"><span>평가기간</span><b>2026.05.20 09:46 ~ 2026.05.22 23:59</b></div>
-            <div class="mock-row"><span>아이디</span><b>••••@jinhakapply.com</b></div>
-            <div class="mock-row"><span>유효기간</span><b>2026.05.27 09:51:00까지</b></div>
-            <div class="mock-row"><span>인증번호</span><b>123456</b></div>
-            <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;">
-              <button class="mock-btn">평가하기</button>
-              <button class="mock-btn ghost">평가위원 매뉴얼 다운받기</button>
+        <div class="mock-inner" style="max-width:560px;">
+          <div class="mock-body" style="padding:36px 32px;">
+            <div style="text-align:center;display:flex;align-items:center;justify-content:center;gap:7px;">
+              <div class="brandmark" style="width:22px;height:22px;border-radius:6px;"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3L18 12L6 21V3Z" fill="white"/></svg></div>
+              <span style="font-weight:800;font-size:14px;letter-spacing:.2px;">JINHAK<span style="color:var(--accent);">PRO</span></span>
             </div>
+            <p style="text-align:center;font-weight:800;font-size:20px;margin:20px 0 10px;">평가위원으로 초대되셨습니다.</p>
+            <p class="muted" style="text-align:center;font-size:12.5px;line-height:1.7;margin-bottom:22px;">
+              안녕하세요 #{평가자명}님 석·박사 채용 접수 플랫폼, 진학프로입니다.<br>
+              '평가시스템 접속하기' 버튼을 통해 비밀번호를 직접 설정한 이후 채용 평가를 진행해주세요
+            </p>
+            <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+              <div style="padding:15px 18px;">
+                <div class="mock-row" style="border:none;"><span style="flex:none;">평가명</span><b style="flex:1;min-width:0;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">평가시스템평가시스템평가시스템평가시스템평가시스템평…</b></div>
+                <div class="mock-row" style="border:none;"><span style="flex:none;">평가기간</span><b style="flex:1;min-width:0;text-align:right;">yyyy.mm.dd (hh:mm:ss)~yyyy.mm.dd (hh:mm:ss)</b></div>
+              </div>
+              <div style="background:var(--bg-mock);padding:15px 18px;">
+                <div class="mock-row" style="border:none;"><span style="flex:none;">평가위원명</span><b style="flex:1;min-width:0;text-align:right;">조가현</b></div>
+                <div class="mock-row" style="border:none;"><span style="flex:none;">이메일(아이디)</span><b style="flex:1;min-width:0;text-align:right;">cgh@gmail.com</b></div>
+                <div class="mock-row" style="border:none;"><span style="flex:none;">인증번호</span><b style="flex:1;min-width:0;text-align:right;">853531</b></div>
+                <p class="muted" style="font-size:11px;margin:8px 0 0;">· 인증번호는 2026.07.07 15:35:36까지 유효합니다.</p>
+              </div>
+              <div style="padding:13px 18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text-muted);line-height:1.6;">
+                <b style="color:var(--text);">ⓘ 평가시스템 로그인 방법 :</b><br>
+                아이디에는 아래에 안내된 이메일 주소를 입력하고, 비밀번호에는 처음 설정한 비밀번호를 입력해주세요.
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:18px;">
+              <button class="mock-btn" style="flex:1;">평가시스템 접속하기</button>
+              <button class="mock-btn" style="flex:1;">평가위원 매뉴얼 다운받기</button>
+            </div>
+            <p style="text-align:center;font-size:11.5px;color:var(--text-muted);margin-top:14px;">
+              도움이 필요하신가요? <span style="color:var(--accent);text-decoration:underline;">고객센터 문의하기 (원격요청)</span>
+            </p>
           </div>
         </div>
         <figcaption>평가요청 메일 예시 — 실제 화면 구성을 재현한 참고용 목업입니다.</figcaption>
       </figure>
 
       <ol class="steps">
-        <li><b>평가 기간 · 아이디</b><span>평가 마감일시 이후에는 평가를 진행할 수 없어요. 아이디는 평가시스템 로그인 시 사용할 계정이에요.</span></li>
-        <li><b>인증번호</b><span>평가시스템 최초 접속 시, 비밀번호 설정에 필요한 6자리 인증번호가 표시돼요.</span></li>
-        <li><b>[평가하기] 버튼</b><span>버튼을 클릭하면 평가시스템에 접속할 수 있어요. 접속이 되지 않을 경우, 메일에 안내된 대체 링크를 클릭해주세요.</span></li>
+        <li><b>평가기간</b><span>평가 기간이 마감된 이후에는 평가를 진행할 수 없어요. 만약 평가를 끝마치지 못하셨다면, 대학 담당자에게 기간 연장을 요청해 주세요.</span></li>
+        <li><b>이메일(아이디)</b><span>평가시스템에 로그인하실 때, 초대메일을 받으신 이메일주소를 아이디로 입력해주세요. 만약 로그인이 되지 않는다면 다른 이메일주소를 입력한 것은 아닌지, 대학 시스템에서 사용하는 아이디를 입력한 것은 아닌지, 이메일 주소 뒤에 공백문자를 입력한 것은 아닌지 확인해 주세요.</span></li>
+        <li><b>인증번호</b><span>평가시스템에 최초 로그인할 때는 보안을 위해 인증번호를 반드시 입력해야 해요. 만약 로그인이 되지 않는다면 인증번호가 틀리지 않았는지, 가장 최근에 받은 인증번호가 아니라 예전에 전달받은 메일의 인증번호를 입력한 것은 아닌지 반드시 확인해 주세요.</span></li>
+        <li><b>고객센터 문의하기</b><span>위 내용 외 다른 문제로 로그인이 되지 않거나, 평가시스템 접속이 되지 않을 경우, 고객센터에 원격 요청 게시글을 남겨주세요. 담당자 확인 후 빠르게 연락드려요.</span></li>
       </ol>
 
       <div class="pagefoot">
