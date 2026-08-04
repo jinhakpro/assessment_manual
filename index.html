@@ -114,6 +114,20 @@
   .searchbox input:focus{border-color:var(--accent);}
   .searchbox svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--text-faint);}
 
+  .fontctl{border:1px solid var(--border);border-radius:var(--radius-s);padding:10px 12px;background:var(--bg-elevated);}
+  .fontctl-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--text-faint);text-transform:uppercase;margin-bottom:8px;}
+  .fontctl-row{display:flex;align-items:center;justify-content:space-between;gap:6px;}
+  .fontctl-row button{
+    width:30px;height:30px;border-radius:7px;border:1px solid var(--border-strong);background:var(--bg-mock);
+    color:var(--text);font-weight:800;cursor:pointer;flex:none;
+  }
+  .fontctl-row button:hover{border-color:var(--accent);color:var(--accent);}
+  .fontctl-row button.dec{font-size:11px;}
+  .fontctl-row button.inc{font-size:16px;}
+  #fontPct{font-family:var(--font-mono);font-size:12px;color:var(--text-muted);}
+  .fontctl-hint{margin:8px 0 0;font-size:11px;color:var(--text-faint);line-height:1.5;}
+  .sidebar.collapsed .fontctl{display:none;}
+
   nav.nav{display:flex;flex-direction:column;gap:2px;flex:1;}
   .nav-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;padding:12px 10px 4px;}
   .nav-item{
@@ -201,7 +215,7 @@
 
   .page-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;}
   .page-head h1{font-size:1.7rem;line-height:1.3;}
-  .page-sub{color:var(--text-muted);font-size:14.5px;margin:8px 0 30px;max-width:60ch;}
+  .page-sub{color:var(--text-muted);font-size:14.5px;margin:8px 0 30px;}
 
   h2.h-sec{font-size:1.2rem;margin:40px 0 12px;display:flex;align-items:center;gap:9px;}
   h2.h-sec:first-of-type{margin-top:8px;}
@@ -354,6 +368,15 @@
     <div class="searchbox">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
       <input id="search" placeholder="목차 검색..." autocomplete="off">
+    </div>
+    <div class="fontctl">
+      <div class="fontctl-label">글씨 크기</div>
+      <div class="fontctl-row">
+        <button class="dec" id="fontDec" aria-label="글씨 작게">가⁻</button>
+        <span id="fontPct">100%</span>
+        <button class="inc" id="fontInc" aria-label="글씨 크게">가⁺</button>
+      </div>
+      <p class="fontctl-hint">글씨 크기를 조정해보세요!</p>
     </div>
     <nav class="nav" id="nav">
       <a class="nav-item" data-page="overview"><span class="num">·</span><span class="label">개요</span></a>
@@ -799,6 +822,23 @@
       el.addEventListener('click', function(){ setActive(idx, true); });
     });
   });
+
+  var fontScale = 1;
+  var fontPctEl = document.getElementById('fontPct');
+  var fontDec = document.getElementById('fontDec');
+  var fontInc = document.getElementById('fontInc');
+  function applyFontScale(){
+    content.style.zoom = fontScale;
+    if(fontPctEl) fontPctEl.textContent = Math.round(fontScale*100)+'%';
+    try{ localStorage.setItem('jp_manual_font_scale', String(fontScale)); }catch(e){}
+  }
+  try{
+    var savedScale = parseFloat(localStorage.getItem('jp_manual_font_scale'));
+    if(savedScale && savedScale>=0.85 && savedScale<=1.5) fontScale = savedScale;
+  }catch(e){}
+  applyFontScale();
+  if(fontDec) fontDec.addEventListener('click', function(){ fontScale = Math.max(0.85, +(fontScale-0.1).toFixed(2)); applyFontScale(); });
+  if(fontInc) fontInc.addEventListener('click', function(){ fontScale = Math.min(1.5, +(fontScale+0.1).toFixed(2)); applyFontScale(); });
 
   var initial = location.hash ? location.hash.slice(1) : 'overview';
   setActive(initial, false);
