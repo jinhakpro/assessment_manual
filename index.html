@@ -588,29 +588,12 @@
 
       <div class="annotated">
         <div class="ann-image">
-          <div class="mock">
-            <div class="panel3">
-              <div class="col p1">
-                <h4>평가 정보</h4>
-                <div class="skel w80"></div><div class="skel w60"></div><div class="skel w80"></div>
-                <div class="skel w40"></div><div class="skel w60"></div>
-              </div>
-              <div class="col p2">
-                <h4>지원서 및 제출서류</h4>
-                <div class="skel w80"></div><div class="skel w60"></div><div class="skel w80"></div>
-                <div class="skel w60"></div><div class="skel w40"></div><div class="skel w80"></div>
-              </div>
-              <div class="col p3">
-                <h4>평가표</h4>
-                <div class="skel w60"></div><div class="skel w80"></div><div class="skel w40"></div>
-                <div class="skel w60"></div>
-              </div>
-            </div>
+          <div class="mock" style="padding:0;overflow:hidden;">
+            <img src="images/screen-04-main.png" alt="평가시스템 메인 화면" style="width:100%;height:auto;display:block;">
           </div>
-          <span class="pin" style="top:38px;left:16%;" data-idx="1">1</span>
-          <span class="pin" style="top:38px;left:50%;" data-idx="2">2</span>
-          <span class="pin" style="top:38px;left:84%;" data-idx="3">3</span>
-          <p class="shot-note">* 실제 화면 스크린샷을 주시면 이 자리표시자를 그대로 교체합니다.</p>
+          <span class="pin" style="top:7%;left:9%;" data-idx="1">1</span>
+          <span class="pin" style="top:7%;left:47%;" data-idx="2">2</span>
+          <span class="pin" style="top:7%;left:88%;" data-idx="3">3</span>
         </div>
         <aside class="ann-legend">
           <div class="ann-item" data-idx="1"><span class="pin">1</span><div><b>평가 정보</b><p>공고/평가, 단과대학/학과, 모집분야를 선택하고 지원자 목록과 진행률을 확인해요.</p></div></div>
@@ -648,9 +631,15 @@
 
       <h2 class="h-sec" id="s5-3">③ 단과대학·학과·모집분야 선택</h2>
       <p>왼쪽 평가정보 패널에서 평가할 단과대학·학과 및 모집분야를 선택해주세요. 선택 전에는 지원자 데이터가 노출되지 않아요.</p>
+      <div class="warn">
+        <span class="tag">진행률이 100%가 안 될 때</span>
+        <p style="margin:8px 0 0;">선택한 모집분야의 지원자를 모두 평가했다면, 다른 학과나 다른 교과목의 지원자 중 <b style="color:var(--text);">평가하지 않은 지원자가 있는지 반드시 확인</b>해 주세요. 진행률은 현재 선택된 모집분야가 아니라 <b style="color:var(--text);">배정된 전체 지원자 기준</b>으로 계산돼요.</p>
+      </div>
 
       <h2 class="h-sec" id="s5-4">④ 지원서 확인 및 평가표 작성</h2>
       <p>지원서를 확인하며, 우측의 평가표 패널에서 P/F·등급·점수를 입력 후 저장해주세요.</p>
+      <p>평가표 하단의 <b>[지원자 평가 저장]</b>을 클릭하여, 각 지원자별로 평가 내용을 저장해야 해요.</p>
+      <p><b>[다음 지원자]</b> 버튼을 클릭하면 아직 평가하지 않은 지원자의 지원서와 제출서류를 바로 확인할 수 있어요.</p>
       <div class="tip"><span class="tag">TIP</span><span>학력사항 · 연구사항 등 메뉴에 커서를 올려두면 세부 지원서 항목을 바로 선택할 수 있어요.</span></div>
 
       <div class="annotated">
@@ -667,24 +656,35 @@
                 </div>
                 <p class="muted" style="font-size:13.5px;margin-bottom:4px;">연구 실적 (80점)</p>
                 <div class="box" style="margin-bottom:14px;">62 점</div>
-                <button class="mock-btn" style="width:100%;">평가 저장하기</button>
+                <div style="display:flex;gap:6px;">
+                  <button class="mock-btn" style="flex:1;">지원자 평가 저장</button>
+                  <button class="mock-btn ghost" style="flex:1;">다음 지원자</button>
+                </div>
               </div>
             </div>
           </div>
           <span class="pin" style="top:118px;left:38%;" data-idx="1">1</span>
           <span class="pin" style="top:198px;left:38%;" data-idx="2">2</span>
-          <span class="pin" style="top:276px;left:38%;" data-idx="3">3</span>
-          <p class="shot-note">* 실제 화면 스크린샷을 주시면 이 자리표시자를 그대로 교체합니다.</p>
+          <span class="pin" style="top:277px;left:22%;" data-idx="3">3</span>
+          <span class="pin" style="top:277px;left:52%;" data-idx="4">4</span>
         </div>
         <aside class="ann-legend">
           <div class="ann-item" data-idx="1"><span class="pin">1</span><div><b>전공 부합성</b><p>지원자 전공과 채용 분야가 일치하는지 PASS/FAIL로 표시해요.</p></div></div>
           <div class="ann-item" data-idx="2"><span class="pin">2</span><div><b>점수 입력</b><p>연구 실적 등 항목별 배점 범위 안에서 점수를 직접 입력해요.</p></div></div>
-          <div class="ann-item" data-idx="3"><span class="pin">3</span><div><b>평가 저장하기</b><p>입력을 마치면 반드시 저장 버튼을 눌러야 평가가 반영돼요.</p></div></div>
+          <div class="ann-item" data-idx="3"><span class="pin">3</span><div><b>지원자 평가 저장</b><p>클릭해야 이 지원자의 평가 내용이 저장돼요. 누르지 않으면 반영되지 않아요.</p></div></div>
+          <div class="ann-item" data-idx="4"><span class="pin">4</span><div><b>다음 지원자</b><p>아직 평가하지 않은 지원자의 지원서와 제출서류로 바로 이동해요.</p></div></div>
         </aside>
       </div>
 
       <h2 class="h-sec" id="s5-5">⑤ 제출서류 확인</h2>
-      <p>지원자가 제출한 파일이나 링크는 '제출서류' 항목명을 클릭하여 확인해주세요.</p>
+      <figure class="mock">
+        <div class="mock-inner" style="max-width:640px;overflow:hidden;">
+          <img src="images/screen-05-submitted-docs.png" alt="제출서류 뷰어 화면" style="width:100%;height:auto;display:block;">
+        </div>
+        <figcaption>제출서류 뷰어 화면 예시</figcaption>
+      </figure>
+      <p>지원자가 제출한 파일이나 링크는 '제출서류' 항목명을 클릭하여 새창으로 확인해주세요.</p>
+      <p>제출서류는 별도로 출력하실 수 없으며, 확대하여 보고 싶으시다면 PDF 뷰어 상단의 <b>+</b> 버튼을 클릭해 주세요.</p>
       <div class="filelist">
         <div>학위증명서</div><div>성적증명서</div>
         <div>교육경력 증빙자료</div><div>연구실적 증빙자료</div>
