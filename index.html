@@ -851,7 +851,7 @@
     if(!reading) return;
     var noToc = !page.querySelectorAll('h2.h-sec').length;
     reading.classList.toggle('no-toc', noToc);
-    reading.classList.toggle('has-annotated', noToc && !!page.querySelector('.ann-image img'));
+    reading.classList.toggle('has-annotated', noToc && !!page.querySelector('.annotated'));
   }
 
   document.querySelectorAll('[data-page]').forEach(function(el){
