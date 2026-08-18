@@ -183,7 +183,7 @@
     cursor:default;z-index:2;transition:transform .15s ease,box-shadow .15s ease;
   }
   .pin.active{transform:translate(-50%,-50%) scale(1.18);box-shadow:0 0 0 4px var(--accent-soft),0 2px 8px rgba(0,0,0,.3);}
-  .ann-legend{width:260px;flex:none;display:flex;flex-direction:column;gap:14px;}
+  .ann-legend{width:340px;flex:none;display:flex;flex-direction:column;gap:14px;}
   .ann-item{display:flex;gap:10px;padding:8px;border-radius:8px;cursor:default;transition:background .15s ease;}
   .ann-item.active{background:var(--accent-soft);}
   .ann-item .pin{position:static;transform:none;flex:none;}
@@ -210,6 +210,8 @@
   /* ---------- content ---------- */
   .content{min-width:0;flex:1;padding:40px 56px 100px;max-width:900px;}
   .reading.no-toc .content{max-width:1100px;}
+  .reading.no-toc.has-annotated{max-width:1560px;}
+  .reading.no-toc.has-annotated .content{max-width:1560px;}
   @media (max-width:900px){.content{padding:28px 22px 80px;max-width:none;}}
   .page{display:none;}
   .page.active{display:block;animation:fade .25s ease;}
@@ -856,11 +858,17 @@
     var reading = document.querySelector('.reading');
     if(!heads.length){
       minitoc.style.display='none';
-      if(reading) reading.classList.add('no-toc');
+      if(reading){
+        reading.classList.add('no-toc');
+        reading.classList.toggle('has-annotated', !!page.querySelector('.annotated'));
+      }
       return;
     }
     minitoc.style.display='';
-    if(reading) reading.classList.remove('no-toc');
+    if(reading){
+      reading.classList.remove('no-toc');
+      reading.classList.remove('has-annotated');
+    }
     minitocList.innerHTML = '';
     heads.forEach(function(h){
       var a = document.createElement('a');
