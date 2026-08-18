@@ -335,6 +335,8 @@
   .pagefoot a b{font-size:16px;color:var(--text);}
   .pagefoot a:hover b{color:var(--accent);}
 
+  .inline-link{color:var(--accent);text-decoration:underline;cursor:pointer;}
+
   .kicker{font-family:var(--font-mono);font-size:13.5px;color:var(--accent);font-weight:700;letter-spacing:.04em;margin-bottom:8px;display:block;}
 
   .cardgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;}
@@ -445,7 +447,8 @@
       <p class="page-sub">이메일 수신함에서 진학프로가 발송한 평가요청 메일을 확인하고 평가시스템에 처음 접속하는 방법입니다.</p>
 
       <p>이메일 수신함에서 진학프로(<b>applyhelp@jinhakapply.com</b>)가 발송한 평가요청 메일을 확인해주세요.<br>
-      만약 메일을 찾지 못하셨다면, <b>스팸메일함</b>을 확인해주시거나 대학에 <b>이메일 재발송</b>을 요청해주세요.</p>
+      만약 메일을 찾지 못하셨다면, <b>스팸메일함</b>을 확인해주시거나 대학에 <b>이메일 재발송</b>을 요청해주세요.<br>
+      계속 메일이 수신되지 않을 경우, <a href="https://www.jinhakpro.com/assess" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">여기</a>를 클릭해 평가시스템에 접속해 주세요.</p>
 
       <div class="annotated">
         <div class="ann-image">
@@ -553,8 +556,7 @@
       <div class="tip"><span class="tag">안내</span><span>진학프로 평가시스템은 대학시스템과는 별도로 운영되기 때문에, 지금 설정하신 비밀번호는 대학시스템 로그인에 아무 영향도 미치지 않아요. 안심하고 설정해주세요.</span></div>
 
       <h2 class="h-sec" id="s2-2">비밀번호 재설정</h2>
-      <p>비밀번호를 잊어버렸거나 잘못 입력하셨다면, 평가시스템 접속이 어려울 수 있어요.</p>
-      <p>그럴 때는 비밀번호를 재설정하고 다시 로그인을 시도해보세요.</p>
+      <p>비밀번호를 잊어버렸거나 로그인이 되지 않는다면, 비밀번호를 재설정하고 다시 로그인을 시도해보세요.</p>
 
       <figure class="mock">
         <div class="mock-inner" style="max-width:600px;">
@@ -594,11 +596,24 @@
         <figcaption>비밀번호 재설정 화면 예시 — 실제 화면 구성을 재현한 참고용 목업입니다.</figcaption>
       </figure>
 
-      <p>비밀번호를 재설정하려면 이름과 이메일주소를 입력해야 해요.<br>
-      이름은 실명이 아니라 대학 담당자가 등록한 평가위원명으로 입력해주셔야 하며, 평가위원 초대메일 내 "평가위원명"에서 확인할 수 있어요. 만약 오류창이 나온다면 이름과 이메일주소 입력란에 공백문자가 없는지 다시 한 번 확인해 주세요.</p>
+      <p>비밀번호를 재설정하려면 이름과 이메일주소를 입력해야 해요.</p>
 
-      <p>이름과 이메일주소를 올바르게 입력 후 [비밀번호 재설정] 버튼을 클릭하면, 비밀번호를 재설정할 수 있는 링크가 이메일로 발송됩니다.<br>
-      비밀번호 규칙과 인증번호를 확인하고 새로운 비밀번호로 로그인해 주세요.</p>
+      <div class="warn">
+        <span class="tag">확인해 주세요</span>
+        <ul>
+          <li>이름은 실명이 아니라 대학 담당자가 등록한 평가위원명으로 입력해야 해요. 평가위원 초대메일 내 "평가위원명"에서 확인할 수 있어요.</li>
+          <li>만약 재설정이 되지 않는다면 이름과 이메일주소 입력란에 공백문자가 없는지 다시 한 번 확인해 주세요.</li>
+        </ul>
+      </div>
+
+      <figure class="mock">
+        <div class="mock-inner" style="max-width:560px;overflow:hidden;">
+          <img src="images/screen-02-reset-password.png" alt="비밀번호 재설정 - 새 비밀번호 입력 화면" style="width:100%;height:auto;display:block;">
+        </div>
+        <figcaption>비밀번호 재설정 - 새 비밀번호 입력 화면</figcaption>
+      </figure>
+
+      <p>이름과 이메일주소를 올바르게 입력 후 [비밀번호 재설정] 버튼을 클릭하면, 비밀번호를 재설정할 수 있는 링크와 인증번호가 이메일로 발송돼요. 비밀번호 규칙에 따라 새로운 비밀번호로 로그인해 주세요.</p>
 
       <div class="pagefoot">
         <a data-page="p1">← 이전<b>01. 평가시스템 접속하기</b></a>
@@ -610,7 +625,7 @@
       <div class="crumb">가이드 <span>/</span> <b>03. 로그인하기</b></div>
       <div class="page-head"><h1><span class="dotmark"></span>&nbsp; 로그인하기</h1></div>
       <p class="page-sub">이메일주소(아이디)와 비밀번호를 입력한 뒤, [로그인] 버튼을 클릭해주세요.</p>
-      <p>비밀번호를 잊으셨다면 <b>'비밀번호 재설정'</b>을 클릭해주세요.</p>
+      <p>비밀번호를 잊으셨다면 <b>'비밀번호 재설정'</b>을 클릭해주세요. 비밀번호 재설정에 어려움이 있을 경우 <a class="inline-link" data-page="p2" data-target="s2-2">"02. 비밀번호 설정하기"</a>를 참고해주세요.</p>
 
       <figure class="mock">
         <div class="mock-inner" style="max-width:440px;">
@@ -662,7 +677,7 @@
     <section class="page" id="page-p5">
       <div class="crumb">가이드 <span>/</span> <b>05. 평가 진행하기</b></div>
       <div class="page-head"><h1><span class="dotmark"></span>&nbsp; 평가 진행하기</h1></div>
-      <p class="page-sub">항목 선택부터 평가표 저장, 메모 공유까지 실제 평가 흐름을 순서대로 안내합니다.</p>
+      <p class="page-sub">학과 및 교과목 선택부터 평가표 저장, 메모 공유까지 실제 평가 순서대로 안내드릴게요.</p>
 
       <h2 class="h-sec" id="s5-1">① 평가 항목 선택</h2>
       <p>진행할 평가 항목을 먼저 선택해주세요. 하나의 계정에 복수의 평가(예: 서류 평가, 면접 평가)가 배정될 수 있어요.</p>
@@ -855,7 +870,16 @@
   }
 
   document.querySelectorAll('[data-page]').forEach(function(el){
-    el.addEventListener('click', function(){ setActive(el.getAttribute('data-page'), true); });
+    el.addEventListener('click', function(){
+      setActive(el.getAttribute('data-page'), true);
+      var targetId = el.getAttribute('data-target');
+      if(targetId){
+        setTimeout(function(){
+          var t = document.getElementById(targetId);
+          if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+        }, 60);
+      }
+    });
   });
 
   var searchIndex = [];
