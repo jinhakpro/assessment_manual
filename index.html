@@ -78,7 +78,7 @@
   .app{display:flex;min-height:100vh;}
   .main-wrap{flex:1;min-width:0;display:flex;justify-content:center;}
   .reading{display:flex;align-items:flex-start;width:100%;max-width:1180px;}
-  @media (max-width:1100px){ .reading{max-width:960px;} .minitoc{display:none;} }
+  @media (max-width:1100px){ .reading{max-width:960px;} }
   @media (max-width:760px){ .app{flex-direction:column;} .reading{display:block;max-width:none;} }
 
   /* ---------- sidebar ---------- */
@@ -334,15 +334,6 @@
   .pagefoot a.next{margin-left:auto;text-align:right;}
   .pagefoot a b{font-size:16px;color:var(--text);}
   .pagefoot a:hover b{color:var(--accent);}
-
-  /* mini toc */
-  .minitoc{width:220px;flex:none;padding:40px 24px 40px 0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;}
-  .minitoc .label{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;margin-bottom:10px;}
-  .minitoc a{
-    display:block;font-size:14.8px;color:var(--text-muted);text-decoration:none;padding:5px 0 5px 12px;
-    border-left:2px solid var(--border);margin-bottom:2px;
-  }
-  .minitoc a:hover{color:var(--accent);}
 
   .kicker{font-family:var(--font-mono);font-size:13.5px;color:var(--accent);font-weight:700;letter-spacing:.04em;margin-bottom:8px;display:block;}
 
@@ -819,11 +810,6 @@
     </section>
 
   </main>
-
-  <aside class="minitoc" id="minitoc">
-    <div class="label">On this page</div>
-    <div id="minitocList"></div>
-  </aside>
   </div></div>
 </div>
 
@@ -835,8 +821,6 @@
     p4:"04. 평가시스템 화면 알아보기", p5:"05. 평가 진행하기", p6:"06. 평가표 인쇄하기", p7:"07. 공지사항 확인하기"
   };
   var content = document.getElementById('content');
-  var minitocList = document.getElementById('minitocList');
-  var minitoc = document.getElementById('minitoc');
 
   function setActive(id, push){
     if(pages.indexOf(id) === -1) id = "overview";
@@ -848,38 +832,17 @@
     });
     if(push) history.replaceState(null,'', '#'+id);
     content.scrollTop = 0;
-    buildMiniToc(id);
+    updateReadingWidth(id);
     closeSidebar();
   }
 
-  function buildMiniToc(id){
+  function updateReadingWidth(id){
     var page = document.getElementById('page-'+id);
-    var heads = page.querySelectorAll('h2.h-sec');
     var reading = document.querySelector('.reading');
-    if(!heads.length){
-      minitoc.style.display='none';
-      if(reading){
-        reading.classList.add('no-toc');
-        reading.classList.toggle('has-annotated', !!page.querySelector('.annotated'));
-      }
-      return;
-    }
-    minitoc.style.display='';
-    if(reading){
-      reading.classList.remove('no-toc');
-      reading.classList.remove('has-annotated');
-    }
-    minitocList.innerHTML = '';
-    heads.forEach(function(h){
-      var a = document.createElement('a');
-      a.textContent = h.textContent;
-      a.href = '#'+h.id;
-      a.addEventListener('click', function(e){
-        e.preventDefault();
-        h.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-      minitocList.appendChild(a);
-    });
+    if(!reading) return;
+    var noToc = !page.querySelectorAll('h2.h-sec').length;
+    reading.classList.toggle('no-toc', noToc);
+    reading.classList.toggle('has-annotated', noToc && !!page.querySelector('.annotated'));
   }
 
   document.querySelectorAll('[data-page]').forEach(function(el){
