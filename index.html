@@ -210,8 +210,10 @@
   /* ---------- content ---------- */
   .content{min-width:0;flex:1;padding:40px 56px 100px;max-width:900px;}
   .reading.no-toc .content{max-width:1100px;}
-  .reading.no-toc.has-annotated{max-width:1560px;}
-  .reading.no-toc.has-annotated .content{max-width:1560px;}
+  .reading.no-toc.has-annotated-wide{max-width:1560px;}
+  .reading.no-toc.has-annotated-wide .content{max-width:1560px;}
+  .reading.no-toc.has-annotated-compact{max-width:1270px;}
+  .reading.no-toc.has-annotated-compact .content{max-width:1270px;}
   @media (max-width:900px){.content{padding:28px 22px 80px;max-width:none;}}
   .page{display:none;}
   .page.active{display:block;animation:fade .25s ease;}
@@ -452,7 +454,7 @@
       만약 메일을 찾지 못하셨다면, <b>스팸메일함</b>을 확인해주시거나 대학에 <b>이메일 재발송</b>을 요청해주세요.<br>
       계속 메일이 수신되지 않을 경우, <a href="https://www.jinhakpro.com/assess" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">여기</a>를 클릭해 평가시스템에 접속해 주세요.</p>
 
-      <div class="annotated">
+      <div class="annotated annotated-compact">
         <div class="ann-image">
           <div class="mock" style="padding:0;overflow:hidden;aspect-ratio:790/700;">
             <img src="images/1_초대 메일.png" alt="평가요청 초대 메일" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -565,7 +567,7 @@
       <div class="page-head"><h1><span class="dotmark"></span>&nbsp; 평가시스템 화면 알아보기</h1></div>
       <p class="page-sub">평가 화면은 세 영역으로 구성돼요. 각 영역의 역할을 먼저 익혀두면 평가를 더 빠르게 진행할 수 있어요.</p>
 
-      <div class="annotated">
+      <div class="annotated annotated-wide">
         <div class="ann-image">
           <div class="mock" style="padding:0;overflow:hidden;aspect-ratio:1920/1080;">
             <img src="images/7_평가시스템_평가진행률 펼침.png" alt="평가시스템 메인 화면" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -768,7 +770,8 @@
     if(!reading) return;
     var noToc = !page.querySelectorAll('h2.h-sec').length;
     reading.classList.toggle('no-toc', noToc);
-    reading.classList.toggle('has-annotated', noToc && !!page.querySelector('.annotated'));
+    reading.classList.toggle('has-annotated-wide', noToc && !!page.querySelector('.annotated-wide'));
+    reading.classList.toggle('has-annotated-compact', noToc && !!page.querySelector('.annotated-compact'));
   }
 
   document.querySelectorAll('[data-page]').forEach(function(el){
