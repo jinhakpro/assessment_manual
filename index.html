@@ -98,6 +98,8 @@
     .sidebar.open{transform:translateX(0);}
   }
   .brandrow{display:flex;align-items:center;gap:9px;padding:6px 8px;}
+  .brand-link{display:flex;align-items:center;gap:9px;text-decoration:none;}
+  .brand-link:hover{opacity:.8;}
   .brandrow .name{font-weight:800;font-size:16.5px;letter-spacing:.2px;}
   .brandrow .name b{color:var(--accent);}
   .brandrow .ver{
@@ -370,6 +372,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg>
     </button>
     <div class="brandrow">
+      <a href="https://www.jinhakpro.com/" target="_blank" rel="noopener" class="brand-link" aria-label="JinhakPro 홈페이지 새 창으로 열기">
       <svg class="jhp-logo" style="height:20px;" viewBox="0 0 139 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="JINHAKPRO">
         <path d="M6.63131 16.0151C6.09684 17.5036 5.29178 17.7708 4.40209 17.764C3.62068 17.764 3.27902 17.5137 2.90691 17.1213L0.109375 19.1611C1.30349 20.1353 2.65659 20.5582 4.23972 20.5582C5.82287 20.5582 6.85799 20.2875 7.79159 19.7328C9.29354 18.8465 9.82463 17.7674 10.2746 16.0862C10.853 13.955 12.1993 7.19629 12.1993 7.19629H8.5967C8.5967 7.19629 7.14552 14.5978 6.63473 16.0151" fill="currentColor"/>
         <path d="M12.5518 19.928H16.1578L18.847 7.19189H15.2377L12.5518 19.928Z" fill="currentColor"/>
@@ -385,6 +388,7 @@
       <svg class="jhp-favicon" viewBox="0 0 79 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="JinhakPro">
         <path d="M79 40.7635L20.8869 0L15.8265 23.6423L39.5914 41.661L6.78853 67.5642L0 100L79 40.7635Z" fill="var(--accent)"/>
       </svg>
+      </a>
       <div class="ver">v2.1</div>
     </div>
     <div class="langtoggle" role="group" aria-label="언어 선택">
