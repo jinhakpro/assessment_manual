@@ -399,6 +399,7 @@
       <a class="nav-item" data-page="p5"><span class="num">05</span><span class="label">평가 진행하기</span></a>
       <a class="nav-item" data-page="p6"><span class="num">06</span><span class="label">공지사항 확인하기</span></a>
       <a class="nav-item" data-page="p7"><span class="num">07</span><span class="label">평가표 인쇄하기</span></a>
+      <a class="nav-item" data-page="p8"><span class="num">08</span><span class="label">문의하기</span></a>
     </nav>
     <div class="sidebar-foot"><span>진학프로 평가시스템</span><span>Ver. 2.1</span></div>
   </aside>
@@ -438,6 +439,7 @@
         <div class="card" data-page="p5"><div class="crow"><span class="num">05</span></div><h4>평가 진행하기</h4><p>항목 선택부터 메모 공유까지 전 과정</p></div>
         <div class="card" data-page="p6"><div class="crow"><span class="num">06</span></div><h4>공지사항 확인하기</h4><p>대학 측 공지 및 첨부파일 확인</p></div>
         <div class="card" data-page="p7"><div class="crow"><span class="num">07</span></div><h4>평가표 인쇄하기</h4><p>평가표 저장 및 출력</p></div>
+        <div class="card" data-page="p8"><div class="crow"><span class="num">08</span></div><h4>문의하기</h4><p>시스템 오류·불편사항 제보</p></div>
       </div>
     </section>
 
@@ -575,7 +577,7 @@
         <aside class="ann-legend">
           <div class="ann-item" data-idx="1"><span class="pin">1</span><div><b>평가 정보</b><p>공고/평가, 단과대학/학과, 모집분야를 선택하고 지원자 목록과 진행률을 확인해요.</p></div></div>
           <div class="ann-item" data-idx="2"><span class="pin">2</span><div><b>지원서 및 제출서류</b><p>지원자의 학력·경력·연구실적 등 지원서 항목과 첨부된 증빙서류를 확인해요.</p></div></div>
-          <div class="ann-item" data-idx="3"><span class="pin">3</span><div><b>평가표</b><p>전공 부합성(PASS/FAIL), 등급, 점수를 입력하고 저장해요.</p></div></div>
+          <div class="ann-item" data-idx="3"><span class="pin">3</span><div><b>평가표</b><p>PASS/FAIL, 등급, 점수, 의견을 입력하고 저장해요.</p></div></div>
         </aside>
       </div>
 
@@ -605,16 +607,6 @@
           <img src="images/9_서약서 동의.png" alt="유의사항 서약 화면" style="width:100%;height:auto;display:block;">
         </div>
       </figure>
-      <div class="warn">
-        <span class="tag">유의사항</span>
-        <ul>
-          <li>평가위원은 반드시 평가기간 내에 배정된 인원을 평가 완료해야 합니다.</li>
-          <li>평가위원은 지원자의 개인 신상 정보, 지원서, 제출서류를 유출하면 안됩니다.</li>
-          <li>평가위원은 합리적이고 공정한 평가를 해야 합니다.</li>
-          <li>평가위원은 반드시 직접 평가를 해야 합니다.</li>
-          <li>평가위원은 평가항목을 꼼꼼하게 읽고 평가를 진행해야 합니다.</li>
-        </ul>
-      </div>
 
       <h2 class="h-sec" id="s5-3">③ 단과대학·학과·모집분야 선택</h2>
       <p>왼쪽 평가정보 패널에서 평가할 단과대학·학과 및 모집분야를 선택해주세요. 선택 전에는 지원자 데이터가 노출되지 않아요.</p>
@@ -687,21 +679,11 @@
     <section class="page" id="page-p6">
       <div class="crumb">가이드 <span>/</span> <b>06. 공지사항 확인하기</b></div>
       <div class="page-head"><h1><span class="dotmark"></span>&nbsp; 공지사항 확인하기</h1></div>
-      <p class="page-sub">대학의 공지 내용은 평가표 탭 우측의 '공지사항' 탭을 클릭하여 확인할 수 있어요.</p>
+      <p>대학의 공지 내용은 평가표 탭 우측의 '공지사항' 탭을 클릭하여 확인할 수 있어요.</p>
 
       <figure class="mock">
-        <div class="notice-mock">
-          <p><b>공지사항</b></p>
-          <p>이번 채용 평가는 온라인 시스템을 통해 진행됩니다.</p>
-          <p>심사는 5/22(금)까지 완료해 주시고, 심사 보안 유지에 유의해 주시기 바랍니다.<br>수당 지급은 6/19(금) 예정이며, 첨부파일의 양식을 작성하여 메일로 회신 부탁드립니다.</p>
-          <p>진행 중 오류나 궁금한 사항은 비상연락처를 확인해주세요. 감사합니다.</p>
-          <p class="date">2026.05.13</p>
-          <div class="filelist" style="grid-template-columns:1fr;margin-top:12px;">
-            <div>[붙임1] 평가위원 체크리스트 및 심사항목</div>
-            <div>[붙임2] 시스템 오류 발생 시 비상연락망</div>
-            <div>[붙임3] 심사 수당 지급 신청 양식</div>
-            <div>[붙임4] 평가 일정 및 타임라인</div>
-          </div>
+        <div class="mock-inner" style="max-width:790px;overflow:hidden;">
+          <img src="images/18_공지사항 확인하기.png" alt="공지사항 확인 화면" style="width:100%;height:auto;display:block;">
         </div>
       </figure>
 
@@ -714,28 +696,41 @@
     <section class="page" id="page-p7">
       <div class="crumb">가이드 <span>/</span> <b>07. 평가표 인쇄하기</b></div>
       <div class="page-head"><h1><span class="dotmark"></span>&nbsp; 평가표 인쇄하기</h1></div>
-      <p class="page-sub">최상단의 [평가표 인쇄] 버튼을 클릭하면 평가표 저장 및 출력을 할 수 있어요.</p>
 
+      <p>우측 상단의 [평가표 인쇄] 버튼을 클릭하면 평가표를 저장하고 출력할 수 있어요. 평가표는 평가 단위로 일괄 출력돼요.</p>
       <figure class="mock">
-        <div class="mock-inner" style="max-width:790px;">
-          <div class="mock-bar"><span class="dots"><span></span><span></span><span></span></span>&nbsp;진학대학교 전임교원 모집</div>
-          <div class="mock-body" style="padding-top:16px;">
-            <table class="printsheet">
-              <tr><td>지원교과목</td><td>공과대학 &gt; 컴퓨터공학과</td></tr>
-              <tr><td>이름 / 접수번호</td><td>김진학 · T114050002</td></tr>
-              <tr><td>전공 부합성</td><td>PASS</td></tr>
-              <tr><td>교육 및 연구 발전 가능성</td><td>B / 17</td></tr>
-              <tr><td>연구 실적</td><td>62</td></tr>
-              <tr><td>학문적 우수성</td><td>50</td></tr>
-              <tr><td>결과</td><td>129점</td></tr>
-            </table>
-          </div>
+        <div class="mock-inner" style="max-width:790px;overflow:hidden;">
+          <img src="images/19_평가표 인쇄하기_1.png" alt="평가표 인쇄 버튼 화면" style="width:100%;height:auto;display:block;">
         </div>
-        <figcaption>평가위원 서명이 포함된 평가표 인쇄 미리보기 예시</figcaption>
+      </figure>
+
+      <p>미리보기 확인 후 [인쇄] 버튼을 클릭해 주세요.</p>
+      <figure class="mock">
+        <div class="mock-inner" style="max-width:790px;overflow:hidden;">
+          <img src="images/20_평가표 인쇄하기_2.png" alt="평가표 인쇄 미리보기 화면" style="width:100%;height:auto;display:block;">
+        </div>
       </figure>
 
       <div class="pagefoot">
         <a data-page="p6">← 이전<b>06. 공지사항 확인하기</b></a>
+        <a class="next" data-page="p8">다음 →<b>08. 문의하기</b></a>
+      </div>
+    </section>
+
+    <section class="page" id="page-p8">
+      <div class="crumb">가이드 <span>/</span> <b>08. 문의하기</b></div>
+      <div class="page-head"><h1><span class="dotmark"></span>&nbsp; 문의하기</h1></div>
+      <p class="page-sub">시스템 오류·불편사항은 아래 절차에 따라 진학프로에게 제보해주세요.</p>
+
+      <p>우측 상단의 '도움이 필요하신가요?' 링크를 클릭하면 1:1문의 및 원격 요청을 할 수 있어요. 현재 어떤 상황이고, 어떤 오류가 있는지 화면 캡쳐 이미지를 남겨주시면 신속하게 확인 후 연락드려요.</p>
+      <figure class="mock">
+        <div class="mock-inner" style="max-width:790px;overflow:hidden;">
+          <img src="images/22_문의하기.png" alt="문의하기 화면" style="width:100%;height:auto;display:block;">
+        </div>
+      </figure>
+
+      <div class="pagefoot">
+        <a data-page="p7">← 이전<b>07. 평가표 인쇄하기</b></a>
         <a data-page="overview" class="next">처음으로 →<b>개요로 돌아가기</b></a>
       </div>
     </section>
@@ -746,10 +741,10 @@
 
 <script>
 (function(){
-  var pages = ["overview","p1","p2","p3","p4","p5","p6","p7"];
+  var pages = ["overview","p1","p2","p3","p4","p5","p6","p7","p8"];
   var titles = {
     overview:"개요", p1:"01. 평가시스템 접속하기", p2:"02. 비밀번호 설정하기", p3:"03. 로그인하기",
-    p4:"04. 평가시스템 화면 알아보기", p5:"05. 평가 진행하기", p6:"06. 공지사항 확인하기", p7:"07. 평가표 인쇄하기"
+    p4:"04. 평가시스템 화면 알아보기", p5:"05. 평가 진행하기", p6:"06. 공지사항 확인하기", p7:"07. 평가표 인쇄하기", p8:"08. 문의하기"
   };
   var content = document.getElementById('content');
 
