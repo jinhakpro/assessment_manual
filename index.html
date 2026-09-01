@@ -940,10 +940,12 @@
       if(el.dataset.koHtml === undefined){
         el.dataset.koHtml = el.innerHTML;
         el.dataset.koText = el.textContent.replace(/\s+/g,' ').trim();
+        el.dataset.hasDotmark = el.dataset.koHtml.indexOf('class="dotmark"') !== -1 ? '1' : '';
       }
       if(lang === 'en'){
         var enHtml = TRANSLATIONS[el.dataset.koText];
-        el.innerHTML = enHtml !== undefined ? enHtml : el.dataset.koHtml;
+        var body = enHtml !== undefined ? enHtml : el.dataset.koHtml;
+        el.innerHTML = el.dataset.hasDotmark ? '<span class="dotmark"></span>&nbsp; ' + body : body;
       } else {
         el.innerHTML = el.dataset.koHtml;
       }
