@@ -265,6 +265,9 @@
     padding:12px 14px;margin:16px 0;font-size:15.8px;
   }
   .tip .tag{font-family:var(--font-mono);font-size:12.5px;font-weight:800;letter-spacing:.06em;color:var(--accent);flex:none;padding-top:1px;}
+  .tip ul{margin:0;padding-left:18px;}
+  .tip li{margin-bottom:4px;}
+  .tip li:last-child{margin-bottom:0;}
   .warn{
     background:var(--accent-2-soft);border-radius:var(--radius-m);padding:14px 16px;margin:18px 0;
   }
@@ -545,8 +548,13 @@
         </div>
       </figure>
 
-      <div class="tip"><span class="i18n tag">TIP</span><span class="i18n">인증번호는 가장 최근에 받은 평가요청 메일에서 확인할 수 있어요.</span></div>
-      <div class="tip"><span class="i18n tag">안내</span><span class="i18n">진학프로 평가시스템은 대학시스템과는 별도로 운영되기 때문에, 지금 설정하신 비밀번호는 대학시스템 로그인에 아무 영향도 미치지 않아요. 안심하고 설정해주세요.</span></div>
+      <div class="tip">
+        <span class="i18n tag">TIP</span>
+        <ul>
+          <li class="i18n">인증번호는 가장 최근에 받은 평가요청 메일에서 확인할 수 있어요.</li>
+          <li class="i18n">진학프로 평가시스템은 대학시스템과는 별도로 운영되기 때문에, 지금 설정하신 비밀번호는 대학시스템 로그인에 아무 영향도 미치지 않아요. 안심하고 설정해주세요.</li>
+        </ul>
+      </div>
 
       <h2 class="i18n h-sec" id="s2-2">비밀번호 재설정</h2>
       <p class="i18n">비밀번호를 잊어버렸거나 로그인이 되지 않는다면, 비밀번호를 재설정하고 다시 로그인을 시도해보세요.</p>
