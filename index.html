@@ -809,7 +809,7 @@
     document.querySelectorAll('.nav-item').forEach(function(el){
       el.classList.toggle('active', el.getAttribute('data-page') === id);
     });
-    if(push) history.replaceState(null,'', '#'+id);
+    if(push) history.pushState(null,'', '#'+id);
     content.scrollTop = 0;
     window.scrollTo(0, 0);
     updateReadingWidth(id);
@@ -1010,6 +1010,10 @@
     if(sl === 'en' || sl === 'ko') savedLang = sl;
   }catch(e){}
   applyLang(savedLang);
+
+  window.addEventListener('popstate', function(){
+    setActive(location.hash ? location.hash.slice(1) : 'overview', false);
+  });
 
   var initial = location.hash ? location.hash.slice(1) : 'overview';
   setActive(initial, false);
